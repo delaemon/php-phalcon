@@ -18,7 +18,7 @@ try {
 
     $di->set('url', function () {
         $url = new Phalcon\Mvc\Url();
-        $url->setBaseUri('/tutorial/');
+        $url->setBaseUri('/');
         return $url;
     });
 

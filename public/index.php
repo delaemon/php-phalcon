@@ -10,6 +10,15 @@ try {
 
     $di = new Phalcon\DI\FactoryDefault();
 
+    $di->set('db', function () {
+        return new Phalcon\Db\Adapter\Pdo\Mysql(array(
+            "host" => "localhost",
+            "username" => "test",
+            "password" => "test",
+            "dbname" => "phalcon_test"
+        ));
+    });
+
     $di->set('view', function () {
         $view = new Phalcon\Mvc\View();
         $view->setViewsDir('../app/views/');
